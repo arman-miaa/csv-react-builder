@@ -1,4 +1,4 @@
-// scripts/generate.js
+
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 const csvFilePath = path.join(__dirname, "../websites.csv");
 const buildDir = path.join(__dirname, "../build");
 
-// পুরনো build ডিলিট
+// remove old build
 if (fs.existsSync(buildDir)) {
   fs.rmSync(buildDir, { recursive: true, force: true });
 }
