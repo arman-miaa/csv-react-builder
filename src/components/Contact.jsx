@@ -1,24 +1,10 @@
-import { FaArrowRight } from "react-icons/fa"; 
-
 export default function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-32 px-4">
-      <div className="container mx-auto bg-white p-4 md:p-10 lg:p-20 text-center">
-        <div className="bg-blue-600 p-4 md:p-8 lg:p-20 rounded-4xl text-white">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Get In Touch
-          </h2>
-          <p className="text-sm md:text-base lg:text-lg mb-8">
-            Connect with us to engage our plumbing services, whether you have a
-            commercial project that requires support, or a domestic plumbing
-            task. All visits are undertaken by a skilled professional.
-          </p>
-          <div className="flex justify-center">
-            <button className="btn btn-primary text-blue-600 bg-white rounded-lg text-center flex items-center justify-center gap-2">
-              Book a Professional Plumber <FaArrowRight />
-            </button>
-          </div>
-        </div>
+    <section id="contact" className="flex flex-col items-center justify-center py-12 bg-base-100">
+      <h2 className="text-xl md:text-2xl font-semibold mb-4">Contact Us</h2>
+      <div className="text-center space-y-2">
+        <p className="text-lg">📞 Phone: 01712345678</p>
+        <p className="text-lg">🏠 Address: House 12, Road 5, Banani, Dhaka</p>
       </div>
     </section>
   );

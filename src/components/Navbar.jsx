@@ -4,7 +4,7 @@ export default function Navbar() {
 
     const links = <>
     
-            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#hero">Hero</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#footer">Footer</a></li>
     </>
@@ -38,7 +38,9 @@ export default function Navbar() {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl uppercase text-blue-600 ">designpreview</a>
+          <a className="btn btn-ghost text-xl uppercase text-blue-600 ">
+            csv-react-builder
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal text-xl px-1">{links}</ul>
