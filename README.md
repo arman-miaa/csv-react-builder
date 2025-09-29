@@ -1,9 +1,9 @@
-নিচে `csv-react-builder` প্রোজেক্টের জন্য একটি সুন্দর README.md-এর খসড়া — তুমি এটাকে GitHub-এ পেস্ট করতে পারো:
 
-```markdown
+
+
 # csv-react-builder
 
-A lightweight tool that reads a CSV file and generates individual React websites for each record. Built with **React**, **Tailwind CSS**, **DaisyUI**, and a custom Node.js script.
+A small tool that reads a CSV file and generates individual React websites for each record. Built with **React**, **Tailwind CSS**, **DaisyUI**, and a Node.js script.
 
 ## Live Demo
 
@@ -11,19 +11,18 @@ A lightweight tool that reads a CSV file and generates individual React websites
 
 ## Features
 
-- Reads a `websites.csv` file with domain, title, description, phone, address.  
-- Automatically generates separate React apps (build folders) for each domain.  
+- Reads `websites.csv` with: `domain`, `title`, `description`, `phone`, `address`.  
+- Generates separate React apps (build folders) for each domain.  
 - Each app includes:
-  - A **Hero** section (e.g. `[[Quick | Fast | Speedy]] delivery service in dhaka.`)  
-  - A **Contact** section (showing phone and address from CSV)  
-- Uses **Tailwind CSS** + **DaisyUI** for styling  
-- Clean, minimal CSS — only small CSS for alignment  
+  - **Hero** section: `[[Quick | Fast | Speedy]] delivery service in dhaka.`
+  - **Contact** section: phone and address from CSV.  
+- Minimal CSS with Tailwind for alignment and spacing.  
 
 ## Tech Stack
 
 - **Frontend:** React + Vite  
 - **Styling:** Tailwind CSS + DaisyUI  
-- **Script:** Node.js (to parse CSV & scaffold React apps)  
+- **Script:** Node.js (CSV parsing & scaffolding)  
 - **Deployment:** Vercel  
 
 ## Folder Structure
@@ -31,60 +30,62 @@ A lightweight tool that reads a CSV file and generates individual React websites
 ```
 
 csv-react-builder/
-├── scripts/
-│   └── generate.js
+├── .gitignore
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
 ├── public/
 │   └── vite.svg
+├── scripts/
+│   └── generate.js
 ├── src/
-│   ├── components/
-│   │   ├── Hero.jsx
-│   │   └── Contact.jsx
 │   ├── App.jsx
+│   ├── assets/
+│   │   └── react.svg
+│   ├── components/
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   └── Navbar.jsx
+│   ├── index.css
 │   ├── main.jsx
-│   └── index.css
-├── websites.csv
-├── package.json
-├── tailwind.config.js
+│   └── page/
+│       └── Home.jsx
 ├── vite.config.js
-└── README.md
+└── websites.csv
 
 ````
 
 ## Getting Started
 
-### 1. Clone the repository
+1. **Clone the repo**
 
 ```bash
 git clone https://github.com/your-username/csv-react-builder.git
+cd csv-react-builder
 ````
 
-### 2. Navigate into project
-
-```bash
-cd csv-react-builder
-```
-
-### 3. Install dependencies
+2. **Install dependencies**
 
 ```bash
 npm install
 ```
 
-### 4. Start development server
+3. **Run development server**
 
 ```bash
 npm run dev
 ```
 
-Visit [http://localhost:5173](http://localhost:5173) to view the main interface (if any).
-
-### 5. Generate React apps from CSV
+4. **Generate React apps from CSV**
 
 ```bash
 npm start
 ```
 
-This will run `scripts/generate.js`, read `websites.csv`, and create build folders for each domain:
+Creates build folders for each domain:
 
 ```
 /build
@@ -93,48 +94,26 @@ This will run `scripts/generate.js`, read `websites.csv`, and create build folde
   /bookbazaar.com
 ```
 
-You can then serve any of those builds or deploy them individually.
-
-## Usage & Behavior
-
-* The **Hero** section displays the static heading:
-  `[[Quick | Fast | Speedy]] delivery service in dhaka.`
-* The **Contact** section uses the `phone` and `address` fields from the CSV.
-* Minimal CSS and layout logic are used — mostly Tailwind utility classes for alignment and spacing.
-* No heavy custom styling; simplicity and clarity is the goal.
-
 ## Scripts
 
-| Script            | Description                                                    |
-| ----------------- | -------------------------------------------------------------- |
-| `npm run dev`     | Run development server for the scaffolding interface (if any)  |
-| `npm run build`   | Bundle the project                                             |
-| `npm run preview` | Preview the build locally                                      |
-| `npm start`       | Run the `generate.js` script to scaffold individual React apps |
+| Script            | Description                                         |
+| ----------------- | --------------------------------------------------- |
+| `npm run dev`     | Run development server (main interface)             |
+| `npm run build`   | Bundle the project                                  |
+| `npm run preview` | Preview the build locally                           |
+| `npm start`       | Run `generate.js` to scaffold individual React apps |
 
-## Notes & Tips
+## Notes
 
-* Make sure your `websites.csv` is correctly formatted (no missing fields).
-* The script assumes each domain is unique and creates a folder named after the domain (without the `.com` in folder name).
-* You can customize Hero & Contact components further by editing their respective files before generating.
-* Deploy the `/build/<domain>` folder to host each generated site independently.
-
----
-
-## Author & Contact
-
-**Arman Mia**
-📧 Email: [arman.miaa36@gmail.com](mailto:arman.miaa36@gmail.com)
+* Ensure `websites.csv` is correctly formatted.
+* Each domain folder is unique.
+* You can edit Hero & Contact components before generating apps.
 
 ---
+
+**Author:** Arman Mia
+📧 [arman.miaa36@gmail.com](mailto:arman.miaa36@gmail.com)
 
 Made with ❤️ using React, Tailwind, DaisyUI, and Node.js.
 
-```
 
----
-
-আশা করি এই README ঠিকমতো কাজ করবে ও প্রোজেক্টকে সুন্দরভাবে উপস্থাপন করবে।  
-চাও, আমি README-তে **project screenshot** এবং **badges** যোগ করি যাতে GitHub এ আরও পেশাদার দেখায়?
-::contentReference[oaicite:0]{index=0}
-```
