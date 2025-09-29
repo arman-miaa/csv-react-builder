@@ -1,123 +1,140 @@
+নিচে `csv-react-builder` প্রোজেক্টের জন্য একটি সুন্দর README.md-এর খসড়া — তুমি এটাকে GitHub-এ পেস্ট করতে পারো:
 
 ```markdown
-# DesignPreview
+# csv-react-builder
 
-A simple and responsive design preview page built with **React**, **Tailwind CSS**, and **DaisyUI**. This project showcases a clean layout featuring components like Navbar, Footer, Contact form, and FAQ section.
+A lightweight tool that reads a CSV file and generates individual React websites for each record. Built with **React**, **Tailwind CSS**, **DaisyUI**, and a custom Node.js script.
 
 ## Live Demo
 
-🔗 [View Live Preview](https://design-preview-chi.vercel.app/)
-
-## Tech Stack
-
-- **Frontend:** React, Vite
-- **Styling:** Tailwind CSS, DaisyUI
-- **Deployment:** Vercel
+[🚀 View Live Preview](https://csv-react-builder.vercel.app/)
 
 ## Features
 
-- Responsive layout
-- Clean and minimal design
-- Components: Navbar, Footer, Contact form, FAQ section
-- Built with modern frontend technologies
+- Reads a `websites.csv` file with domain, title, description, phone, address.  
+- Automatically generates separate React apps (build folders) for each domain.  
+- Each app includes:
+  - A **Hero** section (e.g. `[[Quick | Fast | Speedy]] delivery service in dhaka.`)  
+  - A **Contact** section (showing phone and address from CSV)  
+- Uses **Tailwind CSS** + **DaisyUI** for styling  
+- Clean, minimal CSS — only small CSS for alignment  
+
+## Tech Stack
+
+- **Frontend:** React + Vite  
+- **Styling:** Tailwind CSS + DaisyUI  
+- **Script:** Node.js (to parse CSV & scaffold React apps)  
+- **Deployment:** Vercel  
 
 ## Folder Structure
 
 ```
 
-designpreview/
-├── .gitignore
-├── README.md
-├── eslint.config.js
-├── index.html
-├── package-lock.json
-├── package.json
+csv-react-builder/
+├── scripts/
+│   └── generate.js
 ├── public/
 │   └── vite.svg
 ├── src/
-│   ├── App.jsx
-│   ├── assets/
-│   │   └── react.svg
 │   ├── components/
-│   │   ├── Contact.jsx
-│   │   ├── FaqSection.jsx
-│   │   ├── Footer.jsx
-│   │   └── Navbar.jsx
-│   ├── index.css
+│   │   ├── Hero.jsx
+│   │   └── Contact.jsx
+│   ├── App.jsx
 │   ├── main.jsx
-│   └── page/
-│       └── Home.jsx
-└── vite.config.js
+│   └── index.css
+├── websites.csv
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
 
 ````
 
 ## Getting Started
 
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/designpreview.git
+git clone https://github.com/your-username/csv-react-builder.git
 ````
 
-Replace `your-username` with your GitHub username.
-
-### 2. Navigate to the Project Folder
+### 2. Navigate into project
 
 ```bash
-cd designpreview
+cd csv-react-builder
 ```
 
-### 3. Install Dependencies
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Start the Development Server
+### 4. Start development server
 
 ```bash
 npm run dev
 ```
 
-After running this, you should see output like:
+Visit [http://localhost:5173](http://localhost:5173) to view the main interface (if any).
+
+### 5. Generate React apps from CSV
+
+```bash
+npm start
+```
+
+This will run `scripts/generate.js`, read `websites.csv`, and create build folders for each domain:
 
 ```
-Local:   http://localhost:5173/
-Network: use --host to expose
+/build
+  /foodexpress.com
+  /techhubbd.com
+  /bookbazaar.com
 ```
 
-### 5. Open in Browser
+You can then serve any of those builds or deploy them individually.
 
-Visit [http://localhost:5173](http://localhost:5173) to view your design preview page.
+## Usage & Behavior
 
-## Available Scripts
+* The **Hero** section displays the static heading:
+  `[[Quick | Fast | Speedy]] delivery service in dhaka.`
+* The **Contact** section uses the `phone` and `address` fields from the CSV.
+* Minimal CSS and layout logic are used — mostly Tailwind utility classes for alignment and spacing.
+* No heavy custom styling; simplicity and clarity is the goal.
 
-* `npm run dev` — Start development server
-* `npm run build` — Build for production
-* `npm run preview` — Preview production build locally
+## Scripts
 
-## Notes
+| Script            | Description                                                    |
+| ----------------- | -------------------------------------------------------------- |
+| `npm run dev`     | Run development server for the scaffolding interface (if any)  |
+| `npm run build`   | Bundle the project                                             |
+| `npm run preview` | Preview the build locally                                      |
+| `npm start`       | Run the `generate.js` script to scaffold individual React apps |
 
-* This is a **frontend-only project**, no backend required.
-* Components are located in `src/components`
-* The main page is `src/page/Home.jsx`
-* Tailwind CSS and DaisyUI handle all styling for a modern, responsive UI.
+## Notes & Tips
+
+* Make sure your `websites.csv` is correctly formatted (no missing fields).
+* The script assumes each domain is unique and creates a folder named after the domain (without the `.com` in folder name).
+* You can customize Hero & Contact components further by editing their respective files before generating.
+* Deploy the `/build/<domain>` folder to host each generated site independently.
 
 ---
 
-Made with ❤️ using **React + Tailwind CSS + DaisyUI**.
-
-## Author
+## Author & Contact
 
 **Arman Mia**
-Email: [arman.miaa36@gmail.com](mailto:arman.miaa36@gmail.com)
+📧 Email: [arman.miaa36@gmail.com](mailto:arman.miaa36@gmail.com)
+
+---
+
+Made with ❤️ using React, Tailwind, DaisyUI, and Node.js.
 
 ```
 
-✅ This version:  
-- Keeps all previous sections intact.  
-- Adds your **name and clickable email** at the end under an **Author** section.  
-- Live demo and setup instructions remain intact.  
+---
 
-Do you want me to also **add badges for React, Tailwind, DaisyUI, and Vercel** in this version?
+আশা করি এই README ঠিকমতো কাজ করবে ও প্রোজেক্টকে সুন্দরভাবে উপস্থাপন করবে।  
+চাও, আমি README-তে **project screenshot** এবং **badges** যোগ করি যাতে GitHub এ আরও পেশাদার দেখায়?
+::contentReference[oaicite:0]{index=0}
 ```
